@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<section>
+    <div class="form-box">
+    <div class="form-value">
+    <title>Login</title>
+</head>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+<body>
+    <h2>Login</h2>
+    <form method="POST">
+    <div class="inputbox">
+    <ion-icon name="mail-outline"></ion-icon>
+        : <input type="text" name="username" required><br>
+        <label for="">Username</label>
+    </div>
+    <div class="inputbox">
+    <ion-icon name="lock-closed-outline"></ion-icon>
+        <input type="password" name="password" required><br>
+        <label for="">Password</label>
+    </div>
+        <button type="submit">Login</button>
+    </form>
+    <div class="register">
+    <p>Belum punya akun? <a href="register">Registrasi</a></p>
+    </div>
+</body>
+</html>

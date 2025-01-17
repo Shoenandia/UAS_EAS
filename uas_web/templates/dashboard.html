@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="static/js/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h2>Mahasiswa Dashboard</h2>
+        <nav>
+            <a href="/students">Data Mahasiswa</a>
+            <a href="/login">Logout</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="dashboard-container">
+        <!-- Video Background Section -->
+        <div class="video-container">
+            <video autoplay loop muted playsinline>
+                <source src="static/videos/background.mp4" type="video/mp4">
+            </video>
+            <div class="content">
+                <h1>Welcome to My Website</h1>
+                <p>1482300103</p>
+            </div>
+        </div>
+
+        <!-- Stats Overview Section -->
+        <div class="stats-overview">
+            <div class="stat-card">
+                <h3>Total Mahasiswa</h3>
+                <p>{{ stats.total_students }}</p>
+            </div>
+            <div class="stat-card">
+                <h3>Rata-rata IPK</h3>
+                <p>{{ "%.2f"|format(stats.avg_gpa) }}</p>
+            </div>
+            <div class="stat-card">
+                <h3>Rata-rata Nilai</h3>
+                <p>{{ "%.2f"|format(stats.avg_nilai) }}</p>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="charts-container">
+            <div class="chart-box">
+                <h3>Distribusi IPK</h3>
+                <canvas id="gpaChart"></canvas>
+            </div>
+            <div class="chart-box">
+                <h3>Distribusi Nilai</h3>
+                <canvas id="nilaiChart"></canvas>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
